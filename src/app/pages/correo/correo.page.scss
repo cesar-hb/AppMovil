@@ -1,3 +1,10 @@
+ion-header {
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+    --padding-end: 20px;
+    --padding-start: 20px;
+  }
+
 ion-toolbar { 
     --background: #F1B634;
     --color: white;
@@ -9,6 +16,13 @@ ion-toolbar {
     --padding-top: 10px;
     --padding-bottom: 10px;
   }
-#fondo{
-    --background: #000000;
+
+#logo {
+  display:inline;
+}
+
+#parrafo {
+  display:inline;
+  font-size: 20px;
+  padding-left: 50px;
 }

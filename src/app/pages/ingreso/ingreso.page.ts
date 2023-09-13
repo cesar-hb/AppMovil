@@ -38,7 +38,7 @@ export class IngresoPage implements OnInit {
           }
         };
         this.mostrarMensaje(`¡Bienvenido(a) ${usu.nombre} ${usu.apellido}!`);
-        this.router.navigate(['/home'], navigationExtras);
+        this.router.navigate(['/inicio'], navigationExtras);
       }
     }
   }
