@@ -79,6 +79,15 @@ export class Usuario extends Persona {
       , 'Mujica'
       , 7
       , new Date(2000, 3, 1)));
+    lista.push(new Usuario(
+        'desarrollador@duocuc.cl'
+      , '1234'
+      , '¿Espacios o tabulaciones?'
+      , 'tabs'
+      , 'Aquiles'
+      , 'Computo'
+      , 6
+      , new Date(1990, 9, 31)));
     return lista;
   }
 
