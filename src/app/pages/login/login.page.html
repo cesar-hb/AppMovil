@@ -9,12 +9,11 @@
     Ver: https://ionicframework.com/docs/layout/css-utilities#element-padding
   -->
   <ion-title class="ion-padding-top ion-text-center">
-    <h1>SkeletonAPP</h1>
+    <h1>RegistroApp</h1>
     <ion-label>
-      <p>Aquí comienza todo</p>
+      <p>Solución simple</p>
     </ion-label>
   </ion-title>
-  
   <!--
     Se genera una división donde estará el contenido del login,
     para esto se utilizara ion-padding-vertical que aplica un
@@ -25,25 +24,22 @@
     
     <!-- Se establece un card que contendrá un título y un contenido -->
     <ion-card class="ion-text-center ion-padding-vertical">
-
       <!-- Título del card -->
       <ion-card-title class="ion-text-center">
         <ion-label>
           <h2>¡Bienvenido!</h2>
         </ion-label>
       </ion-card-title>
-
       <!-- Formulario de login -->
       <form>
         <!-- Contenido del card -->
         <ion-card-content>
-          
           <!-- Item de correo -->
           <ion-item>
             <!-- Usamos ngModel para indicarle al input que se ligará con la propiedad "usuario.correo" -->
             <ion-input name="correo" label="Correo" labelPlacement="floating" type="text" [(ngModel)]="usuario.correo"></ion-input>
           </ion-item>
-          
+                 
           <!-- Item de contraseña -->
           <ion-item>
             <!-- Usamos ngModel para indicarle al input que se ligará con la propiedad "usuario.password" -->
