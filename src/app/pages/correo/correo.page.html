@@ -19,4 +19,29 @@
       </ion-card-title>
     </ion-card>
     </div>
+<ion-content [fullscreen]="true" >
+  <div class="ion-padding-vertical">
+    <ion-card class="ion-text-center ion-padding-vertical">
+      <ion-card-title class="ion-text-center">
+        <ion-label>
+          <h2>Recuperar Contraseña</h2>
+          <h3>Paso 1: Ingresa tu correo</h3>
+        </ion-label>
+      </ion-card-title>
+      <form>
+        <!-- Contenido del card -->
+        <ion-card-content>
+          
+          <!-- Item de correo -->
+          <ion-item>
+            <!-- Usamos ngModel para indicarle al input que se ligará con la propiedad "usuario.correo" -->
+            <ion-input name="correo" label="Correo" labelPlacement="floating" type="text"></ion-input>
+          </ion-item>
+          <!-- Se debe usar (click) para enlazar con el método de la clase en typescript -->
+          <ion-button shape="block" >Enviar correo</ion-button>
+
+        </ion-card-content>
+      </form>
+    </ion-card>
+  </div>
 </ion-content>
