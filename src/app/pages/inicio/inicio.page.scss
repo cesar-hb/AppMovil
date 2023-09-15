@@ -32,3 +32,16 @@ ion-toolbar {
   max-width: 300px;
   min-width: 350px;
 }
+
+ion-content {
+  --background: none;
+  --background: url(/assets/background2.jpeg) no-repeat center/cover fixed;
+}
+
+.texto{
+  color:#f14e03;
+}
+
+.texto2{
+  color:#51ff00;
+}

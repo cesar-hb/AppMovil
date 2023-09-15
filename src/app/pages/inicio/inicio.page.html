@@ -14,13 +14,13 @@
 <ion-content [fullscreen]="true" class="ion-padding-horizontal">
   <ion-title class="ion-padding-top">
     <ion-label class="ion-text-center">
-      <h1>¡Bienvenido!</h1>
-      <p *ngIf="usuario">Usuario: {{ usuario.nombre + ' ' + usuario.apellido }}</p>
-      <h4>Escanea el código QR para registrar tu asistencia a clases</h4>
+      <h1 class="texto">¡Bienvenido!</h1>
+      <p class="texto" *ngIf="usuario">Usuario: {{ usuario.nombre + ' ' + usuario.apellido }}</p>
+      <h4 class="texto">Escanea el código QR para registrar tu asistencia a clases</h4>
       <div id="QR">
         <img src="/assets/QR.png" alt="qr">
       </div>
-      <a routerLink="" (click)="cerrarSesion()">Cerrar sesión</a>
+      <a class="texto2" routerLink="" (click)="cerrarSesion()">Cerrar sesión</a>
     </ion-label>
   </ion-title>
 </ion-content>
