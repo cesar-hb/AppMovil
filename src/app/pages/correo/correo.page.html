@@ -1,10 +1,11 @@
 <ion-header>
   <ion-toolbar >
-    <ion-title #titulo>
+    <ion-title class="ion-text-center ">
       <div>
         <img id=logo src="/assets/duoc-logo-s.png" alt="image">
-        <p id=parrafo>Sistema de asistencia DUOC</p>
+        
       </div>
+      <h2 id=parrafo>Sistema de asistencia DUOC</h2>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -37,6 +38,7 @@
             <!-- Usamos ngModel para indicarle al input que se ligará con la propiedad "usuario.correo" -->
             <ion-input name="correo" label="Correo" labelPlacement="floating" type="text"></ion-input>
           </ion-item>
+          <br>
           <!-- Se debe usar (click) para enlazar con el método de la clase en typescript -->
           <ion-button shape="block">Enviar correo</ion-button>
 

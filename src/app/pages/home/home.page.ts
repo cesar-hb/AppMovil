@@ -50,7 +50,7 @@ export class HomePage implements OnInit, AfterViewInit {
       // Si no vienen datos extra desde la página anterior, quiere decir que el usuario
       // intentó entrar directamente a la página home sin pasar por el login,
       // de modo que el sistema debe enviarlo al login para que inicie sesión.
-      this.router.navigate(['/login']);
+      this.router.navigate(['/ingreso']);
 
     });
   }
