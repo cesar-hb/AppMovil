@@ -8,12 +8,40 @@ import { Usuario } from 'src/app/model/usuario';
   styleUrls: ['./correo.page.scss'],
 })
 export class CorreoPage implements OnInit {
-  public usuario: Usuario | undefined;
+  public usuario: Usuario;
   constructor(private router: Router, private toastController: ToastController) {
     this.usuario = new Usuario('', '', '', '', '', '', 0, null)
    }
 
-  ngOnInit() {
+  public ngOnInit(): void {
+  }
+  public ingresar(): void {
+    
+    if (this.usuario) {
+      const mensajeError = this.usuario.validarUsuario();
+      if (mensajeError) {
+        this.mostrarMensaje(mensajeError);
+        return;
+      }
+
+      const usu: Usuario | undefined = this.usuario.validarCorreo();
+      
+      if (usu) {
+          const navigationExtras: NavigationExtras = {
+          state: {
+            usuario: usu
+          }
+        };
+      }
+    }
+  }
+
+  async mostrarMensaje(mensaje: string, duracion?: number) {
+    const toast = await this.toastController.create({
+        message: mensaje,
+        duration: duracion? duracion: 2000
+      });
+    toast.present();
   }
 
 }
