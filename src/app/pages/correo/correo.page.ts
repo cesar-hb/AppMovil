@@ -15,26 +15,6 @@ export class CorreoPage implements OnInit {
 
   public ngOnInit(): void {
   }
-  public ingresar(): void {
-    
-    if (this.usuario) {
-      const mensajeError = this.usuario.validarUsuario();
-      if (mensajeError) {
-        this.mostrarMensaje(mensajeError);
-        return;
-      }
-
-      const usu: Usuario | undefined = this.usuario.validarCorreo();
-      
-      if (usu) {
-          const navigationExtras: NavigationExtras = {
-          state: {
-            usuario: usu
-          }
-        };
-      }
-    }
-  }
 
   async mostrarMensaje(mensaje: string, duracion?: number) {
     const toast = await this.toastController.create({
