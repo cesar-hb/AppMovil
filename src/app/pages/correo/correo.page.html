@@ -26,11 +26,12 @@
         <!-- Item de correo -->
         <ion-item>
           <!-- Usamos ngModel para indicarle al input que se ligará con la propiedad "usuario.correo" -->
-          <ion-input [(ngModel)]="correo" name="correo" label="Correo" type="text"></ion-input>
+          <ion-input [(ngModel)]="correo" name="correo" label="Correo" labelPlacement="floating" type="text"></ion-input>
         </ion-item>
         <br>
-        <a (click)="aPaginaRespuestaSecreta()">Recuperar Contraseña</a>
-
+        <ion-button (click)="aPaginaRespuestaSecreta()" expand="block">
+          Recuperar Contraseña
+        </ion-button>
       </ion-card-content>
     </ion-card>
   </div>
