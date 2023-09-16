@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router'; // Permite navegar y pasar parámetros extra entre páginas
-import { ToastController } from '@ionic/angular'; // Permite mostrar mensajes emergente
 import { Usuario } from 'src/app/model/usuario';
 
 
@@ -10,20 +9,27 @@ import { Usuario } from 'src/app/model/usuario';
   styleUrls: ['./correo.page.scss'],
 })
 export class CorreoPage implements OnInit {
-  public usuario: Usuario;
-  constructor(private router: Router, private toastController: ToastController) {
-    this.usuario = new Usuario('', '', '', '', '', '', 0, null)
+  public correo: string='';
+  constructor(private router: Router) {
+    
    }
 
   public ngOnInit(): void {
   }
-
-  async mostrarMensaje(mensaje: string, duracion?: number) {
-    const toast = await this.toastController.create({
-        message: mensaje,
-        duration: duracion? duracion: 2000
-      });
-    toast.present();
+  public aPaginaRespuestaSecreta():void{
+    const usuario = new Usuario('', '', '', '', '', '',0,null);
+    const usuEncontrado = usuario.buscarUsuarioPorCorreo(this.correo);
+    if(!usuEncontrado){
+      alert('Correo de usuario no encontrado');
+    }
+    else{
+      const navigationExtras: NavigationExtras = {
+        state: {
+          usuario: usuEncontrado
+        }
+      };
+      this.router.navigate(['/pregunta'], navigationExtras);
+    }
   }
 
 }
