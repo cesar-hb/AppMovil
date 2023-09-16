@@ -9,13 +9,14 @@ import { Usuario } from 'src/app/model/usuario';
   styleUrls: ['./correo.page.scss'],
 })
 export class CorreoPage implements OnInit {
+  
   public correo: string='';
-  constructor(private router: Router) {
-    
-   }
+  
+  constructor(private router: Router) {}
 
   public ngOnInit(): void {
   }
+  
   public aPaginaRespuestaSecreta():void{
     const usuario = new Usuario('', '', '', '', '', '',0,null);
     const usuEncontrado = usuario.buscarUsuarioPorCorreo(this.correo);
