@@ -10,6 +10,7 @@ import { Usuario } from 'src/app/model/usuario';
 export class PreguntaPage implements OnInit {
   public usuario : Usuario | undefined;
   public respuesta: string= '';
+  public laPregunta: string= '';
   
   constructor(
     private activatedRoute: ActivatedRoute, 
@@ -26,7 +27,10 @@ export class PreguntaPage implements OnInit {
   }
   ngOnInit() {
   }
-  
+  public preguntarSecreto():void{
+    this.laPregunta = this.usuario!.preguntaSecreta;
+    //return this.laPregunta;
+  }
   public aPaginaComprobacion():void{
     if(this.usuario?.respuestaSecreta === this.respuesta){
       alert('Correcto, tu clave es '+ this.usuario.password);
