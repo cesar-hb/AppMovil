@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario';
 
 @Component({
@@ -32,10 +32,17 @@ export class PreguntaPage implements OnInit {
     //return this.laPregunta;
   }
   public aPaginaComprobacion():void{
+    const dato = this.usuario?.password;
     if(this.usuario?.respuestaSecreta === this.respuesta){
-      alert('Correcto, tu clave es '+ this.usuario.password);
+      
+      const navExtras:  NavigationExtras= {
+        state: {
+          dato: dato
+        }
+      };
+      this.router.navigate(['/correcto'], navExtras);
     }else{
-      alert('Incorrecto');
+      this.router.navigate(['/incorrecto']);
     }
   }
 }
