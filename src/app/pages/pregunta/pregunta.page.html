@@ -21,20 +21,22 @@
             <p>{{usuario?.preguntaSecreta}}</p></div>
         </ion-label>
       </ion-card-title>
-      <form>
-        <ion-card-content>
-          
-          <ion-item>
-            <!-- Usamos ngModel para indicarle al input que se ligará con la propiedad "usuario.correo" -->
-            <ion-input [(ngModel)]="respuesta" name="respuesta" label="Aqui tu respuesta" labelPlacement="floating" type="text"></ion-input>
-          </ion-item>
-          <br>
-          <!-- Se debe usar (click) para enlazar con el método de la clase en typescript -->
-          <ion-button (click)="aPaginaComprobacion()" expand="block">
-            Recuperar Contraseña
-          </ion-button>
-        </ion-card-content>
-      </form>
+      <ion-card-content>
+        
+        <ion-item>
+          <!-- Usamos ngModel para indicarle al input que se ligará con la propiedad "usuario.correo" -->
+          <ion-input [(ngModel)]="respuesta" name="respuesta" label="Aqui tu respuesta" labelPlacement="floating" type="text"></ion-input>
+        </ion-item>
+        <br>
+        <!-- Se debe usar (click) para enlazar con el método de la clase en typescript -->
+        <ion-button (click)="aPaginaComprobacion()" expand="block">
+          Recuperar Contraseña
+        </ion-button>
+      </ion-card-content>
+
     </ion-card>
+  </div>
+  <div class="ion-text-center">
+    <a [routerLink]="['/ingreso']">Volver al Login</a>
   </div>
 </ion-content>
