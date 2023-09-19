@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-correcto',
@@ -6,10 +7,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./correcto.page.scss'],
 })
 export class CorrectoPage implements OnInit {
+  public datoFinal : string = '';
+  constructor(
+    private activatedRoute: ActivatedRoute, 
+    private router: Router
+    ) { 
+    this.activatedRoute.queryParams.subscribe(params => { 
 
-  constructor() { }
-
-  ngOnInit() {
+      const nav = this.router.getCurrentNavigation();
+      if (nav) {
+        // Si tiene datos extra, se rescatan y se asignan a una propiedad
+        if (nav.extras.state) {
+          this.datoFinal = nav.extras.state['dato'];
+          return;
+        }
+      }
+    });
   }
 
+  ngOnInit() {
+
+  }
+
+  public mostrarPassword():void{
+    this.datoFinal;
+  }
 }
