@@ -37,3 +37,8 @@ ion-toolbar {
   height: 100px;
   width: 100px;
 }
+
+ion-content {
+  --background: none;
+  --background: url(/assets/background.webp) no-repeat center/cover fixed;
+}

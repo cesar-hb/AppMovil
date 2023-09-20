@@ -67,9 +67,12 @@ export class InicioPage implements OnInit, AfterViewInit {
         .create()
         .addElement(this.itemTitulo.nativeElement)
         .iterations(Infinity)
-        .duration(6000)
-        .fromTo('transform', 'translate(0%)', 'translate(100%)')
-        .fromTo('opacity', 0.2, 1);
+        .duration(3000)
+        .keyframes([
+          { offset: 0, transform: 'scale(1) rotate(0)' },
+          { offset: 0.5, transform: 'scale(1) rotate(1deg)' },
+          { offset: 1, transform: 'scale(1) rotate(0) ' },
+        ]);
 
       animation.play();
     }
