@@ -7,7 +7,6 @@ const routes: Routes = [
     redirectTo: 'inicio',
     pathMatch: 'full'
   },
-  
   {
     path: 'correo',
     loadChildren: () => import('./pages/correo/correo.module').then( m => m.CorreoPageModule)
